@@ -4,7 +4,7 @@ set ruler
 set showmatch
 set showmode
 
-set number
+set relativenumber
 
 set wildmenu
 set showcmd
@@ -47,6 +47,7 @@ nmap <space>L :tabNext<cr>
 call plug#begin('~/.vim/bundle')
 
 Plug 'junegunn/seoul256.vim'
+Plug 'github/copilot.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'posva/vim-vue'
@@ -56,13 +57,21 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'rust-lang/rust.vim'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" diff view plugins
+Plug 'nvim-lua/plenary.nvim'
+Plug 'sindrets/diffview.nvim'
 
 call plug#end()
 
 " syntax highlighting
 " colo seoul256
 " set background=dark
-" colorscheme solarized
+" colorscheme gruvbox
+" set clipboard+=unnamedplus
 syntax on
 
 " dense-analysis/ale
@@ -81,3 +90,6 @@ let g:ale_linters = {'vue': ['eslint', 'vls']}
 
 " nerd tree git plugin
 let g:NERDTreeGitStatusConcealBrackets = 1
+
+" rust
+let g:rustfmt_autosave = 1
