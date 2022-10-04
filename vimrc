@@ -24,6 +24,8 @@ set ignorecase
 set smartcase
 set incsearch
 
+syntax on
+
 " status line
 set statusline=[%{winnr()}]
 set statusline+=%([\%R%M]\ %)
@@ -66,13 +68,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
 
 call plug#end()
-
-" syntax highlighting
-" colo seoul256
-" set background=dark
-" colorscheme gruvbox
-" set clipboard+=unnamedplus
-syntax on
 
 " dense-analysis/ale
 let g:ale_fixers = {
