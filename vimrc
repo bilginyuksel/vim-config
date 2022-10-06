@@ -1,5 +1,6 @@
 set nocompatible
 
+
 set ruler
 set showmatch
 set showmode
@@ -33,6 +34,8 @@ set statusline+=%<%f
 set statusline+=%(\ %y%)
 set statusline+=%=
 set statusline+=%4(%p%%%)
+
+set clipboard+=unnamed
 
 " leader
 let mapleader=" "
