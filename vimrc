@@ -44,6 +44,10 @@ nnoremap <space>l <C-w>l
 nnoremap <space>h <C-w>h
 nnoremap <space>j <C-w>j
 nnoremap <space>k <C-w>k
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-g> :GFiles<CR>
+nnoremap <C-f> :Rg<CR>
+nnoremap <C-e> :NERDTree<CR>
 
 " tab navigation
 nmap <space>H :tabprevious<cr>
