@@ -65,6 +65,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'rust-lang/rust.vim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'rking/ag.vim'
 
 " diff view plugins
 Plug 'nvim-lua/plenary.nvim'
