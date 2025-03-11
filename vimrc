@@ -59,7 +59,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'github/copilot.vim'
 Plug 'tpope/vim-fugitive'
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'vim-airline/vim-airline'
@@ -67,7 +67,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
 
 " fzf and ag
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
