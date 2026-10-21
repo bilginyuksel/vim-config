@@ -59,7 +59,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'github/copilot.vim'
 Plug 'tpope/vim-fugitive'
 
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'vim-airline/vim-airline'
@@ -67,7 +67,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-"Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 
 " fzf and ag
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -84,6 +84,12 @@ Plug 'ryanoasis/vim-devicons'
 
 " multiple cursors
 Plug 'terryma/vim-multiple-cursors'
+
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion' "Optional
 
 call plug#end()
 
@@ -105,6 +111,7 @@ let g:go_highlight_generate_tags = 0
 "" disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
+let g:go_doc_mapping_enabled = 0
 
 " disable all linters as that is taken care of by coc.nvim
 let g:go_diagnostics_enabled = 0
@@ -243,12 +250,12 @@ omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> to scroll float windows/popups
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  nnoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-j>"
+  nnoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
+  inoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-j>"
+  vnoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
 endif
 
 " Use CTRL-S for selections ranges
@@ -297,3 +304,8 @@ nnoremap <silent> <C-g> :GFiles<CR>
 nnoremap <C-f> :Rg<CR>
 nnoremap <C-e> :NERDTree<CR>
 
+let g:dbs = {
+\ 'schedules-prod': 'postgres://schedules_admin:kj8BXD8F9FLpmGFQ@localhost:6001/schedules',
+\ 'c-dev': 'postgres://postgres:%RndGrjRQQ3Fk4xh@api-v2-dev-db.ciqn2fjwm21o.us-west-2.rds.amazonaws.com:5432/camereye',
+\ 'c-prod': 'postgres://postgres:furuJbs3mf_0hp8A@api-v2-prod-db.ciqn2fjwm21o.us-west-2.rds.amazonaws.com:5432/camereye',
+\ }
